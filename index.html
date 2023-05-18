@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <form class="form">
+        <label class="form__label">
+            <span class="form__label__title">Username</span>
+            <input class="form__input" id="username" type="text" placeholder="Enter username">
+            <span class="error error-username">Error message informing me of a problem</span>
+        </label>
+        <label class="form__label">
+            <span class="form__label__title">Password</span>
+            <input class="form__input" id="password" type="text" placeholder="Enter password">
+            <span class="form__label__assistive">Your password is between 4 and 12 characters</span>
+            <span class="error error-password">Error message informing me of a problem</span>
+        </label>
+
+        <label class="checkbox" for="checkbox">
+            <input class="checkbox__base" type="checkbox" name="checkbox" id="checkbox">
+            <div class="checkbox__custom"></div>
+            <span class="checkbox__title">Remember me</span>
+        </label>
+
+        <label class="form__toggle__label">
+            <input class="form__toggle__base" id="toggle" type="checkbox"/>
+            <div class="form__toggle__custom"></div>
+            <span class="form__toggle__title form__toggle__title-on">On</span>
+            <span class="form__toggle__title form__toggle__title-off">Off</span>
+        </label>
+        
+        <fieldset class="fieldset-radio">
+                <label class="radio" for="radio-1">
+                    <input class="radio__base" id="radio-1" name="radio" type="radio" value="1" checked>
+                    <div class="radio__custom"></div>
+                    <span class="radio__title">Radio selection 1</span>
+                </label>
+
+                <label class="radio" for="radio-2">
+                    <input class="radio__base" id="radio-2" name="radio" type="radio" value="2">
+
+                    <div class="radio__custom"></div>
+                    <span class="radio__title">Radio selection 2</span>
+                </label>
+
+                <label class="radio" for="radio-3">
+                    <input class="radio__base" id="radio-3" name="radio" type="radio" value="3">
+
+                    <div class="radio__custom"></div>
+                    <span class="radio__title">Radio selection 3</span>
+                </label>
+        </fieldset>
+
+        <div class="dropdown">
+            <div class="dropdown__btn" tabindex="0">
+                <span class="dropdown__title">Dropdown option</span>
+                <svg class="dropdown__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_1202_23-265129)">
+                    <path d="M7.41 15.41L12 10.83L16.59 15.41L18 14L12 8L6 14L7.41 15.41Z" fill="#7A5CFA"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_1202_23-265129">
+                    <rect width="24" height="24" fill="white"/>
+                    </clipPath>
+                    </defs>
+                </svg>
+            </div>
+            <div class="dropdown__list">
+                <div class="dropdown__item dropdown__item-active" data-value="option">Dropdown option</div>
+                <div class="dropdown__item" data-value="option1">Dropdown option 1</div>
+                <div class="dropdown__item" data-value="option2">Dropdown option 2</div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button class="buttons__item buttons__item-cancel">Cancel</button>
+            <button class="buttons__item buttons__item-next" disabled>Next</button>
+        </div>
+    </form>
+    
+    <script src="./script.js"></script>
+</body>
+</html>

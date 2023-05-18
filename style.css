@@ -1,0 +1,340 @@
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('./fonts/NotoSans-Regular.ttf') format('ttf');
+    font-display: swap;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('./fonts/NotoSans-SemiBold.ttf') format('ttf');
+    font-display: swap;
+    font-weight: 600;
+    font-style: normal;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+}
+
+body {
+    background-color: rgba(122, 92, 250, 0.2);
+    font-family: 'Noto Sans';
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #666666;
+}
+
+.form {
+    margin: 0 auto;
+    padding: 96px 98px 92px;
+    display: flex;
+    flex-direction: column;
+    width: 760px;
+    height: 1100px;
+    background-color: #FFFFFF;
+}
+
+.form__label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+}
+
+.form__label__title {
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.form__input {
+    padding: 16px;
+    width: 564px;
+    height: 56px;
+    border: 1px solid #CCCCCC;
+    border-radius: 8px;
+}
+
+.form__input:focus {
+    outline: 2px solid #7A5CFA
+}
+
+.form__label__assistive {
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+/* checkbox */
+.checkbox {
+    display: flex;
+    margin-bottom: 32px;
+}
+.checkbox__base {
+    opacity: 0;
+    visibility: hidden;
+    width: 0;
+}
+.checkbox__custom {
+    margin-right: 16px;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #CCCCCC;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.checkbox__base:checked + .checkbox__custom {
+    background-image: url('./images/check.svg');
+    background-position: center;
+}
+/* checkbox */
+
+/* toggle */
+.form__toggle__label {
+    display: flex;
+    width: fit-content;
+    margin-bottom: 32px;
+}
+
+.form__toggle__title {
+    opacity: 0;
+    visibility: hidden;
+    width: 0;
+}
+
+.form__toggle__base {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.form__toggle__custom {
+    position: relative;
+    cursor: pointer;
+    display: block;
+    width: 49px;
+    height: 24px;
+    border-radius: 32px;
+    outline: 1px solid #CCCCCC;
+    margin-right: 16px;
+}
+
+.form__toggle__custom:after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 18px;
+    height: 18px;
+    background: #F4F4F4;
+    outline: 1px solid #CCCCCC;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+  
+.form__toggle__base:checked + .form__toggle__custom {
+    background: rgba(122, 92, 250, 1);
+}
+  
+.form__toggle__base:checked + .form__toggle__custom:after {
+    left: calc(100% - 3px);
+    transform: translateX(-100%);
+}
+
+.form__toggle__base:checked ~ .form__toggle__title-on{
+    opacity: 1;
+    visibility: visible;
+    width: fit-content;
+}
+
+.form__toggle__base:checked ~ .form__toggle__title-off{
+    opacity: 0;
+    visibility: hidden;
+    width: 0;
+}
+
+.form__toggle__title-off {
+    opacity: 1;
+    visibility: visible;
+    width: fit-content;
+}
+/* toggle */
+
+/* radio */
+.fieldset-radio {
+    border: none;
+}
+
+.radio {
+    display: flex;
+    margin-bottom: 32px;
+}
+
+.radio__base {
+    opacity: 0;
+    visibility: hidden;
+    width: 0;
+}
+.radio__custom {
+    position: relative;
+    margin-right: 16px;
+    width: 24px;
+    height: 24px;
+    outline: 1px solid #CCCCCC;
+    border-radius: 32px;
+}
+
+.radio__base:checked + .radio__custom::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 12px;
+    height: 12px;
+    background: #7A5CFA;
+    border-radius: 32px;
+}
+
+/* radio */
+/* dropdown */
+.dropdown {
+    position: relative;
+    width: 564px;
+    height: 56px;
+}
+
+.dropdown__btn {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #CCCCCC;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+}
+
+.dropdown__btn:focus {
+    border: 2px solid #7A5CFA;
+}
+
+.dropdown__btn-active {
+    border: 2px solid #7A5CFA;
+}
+
+.dropdown__title {
+    pointer-events: none;
+}
+
+.dropdown__icon {
+    pointer-events: none;
+    transition: all 0.2s;
+    transform: rotate(180deg);
+}
+
+.dropdown__list {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    height: 168px;
+    border: 1px solid #CCCCCC;
+    background-color: white;
+    border-radius: 0px 0px 8px 8px;
+    overflow: hidden;
+    overflow-y: scroll;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.dropdown__list-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown__icon-active {
+    transform: rotate(0deg);
+}
+
+.dropdown__list::-webkit-scrollbar {
+    display: none;
+}
+
+.dropdown__item {
+    padding: 16px;
+    border-bottom: 1px solid #CCCCCC;
+    cursor: pointer;
+}
+
+.dropdown__item-active {
+    background: #7A5CFA;
+    color: white;
+}
+
+
+/* dropdown */
+
+.buttons {
+    margin: auto;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.buttons__item-cancel {
+    background-color: white;
+    color: rgba(122, 92, 250, 1);
+}
+
+.buttons__item-next {
+    background-color: rgba(122, 92, 250, 1);
+    color: white;
+}
+
+.buttons__item-next:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.buttons__item {
+    padding: 16px;
+    width: 172px;
+    height: 56px;
+    border: 1px solid #7A5CFA;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 24px;
+    outline: none;
+}
+
+.error {
+    font-size: 12px;
+    line-height: 18px;
+    color: #EB5757;
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+}
+
+.error-active {
+    margin-top: 8px;
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+}
+
+.form__input-error {
+    background-image: url('./images/error.svg');
+    background-position: right 16px center;
+    outline: 2px solid #EB5757;
+}
